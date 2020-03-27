@@ -48,10 +48,13 @@ generateButton.addEventListener("click",
         // Calcolo del biglietto nel caso di minorenne, applicare 20% di sconto */
         if (etaValue === "minorenne"){
             bigliettoScontato = costoBiglietto - (costoBiglietto*scontoUnder);
+            document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoUnder*100) + "%";
         }else if(etaValue === "over"){  // In caso di over 65 sconto del 40%
             bigliettoScontato = costoBiglietto - (costoBiglietto*scontoOver);
+            document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoOver*100) + "%";
         }else{  // Eta compresa tra 18 e 65 anni
             bigliettoScontato = costoBiglietto;
+            document.getElementById("dettSconto").innerHTML = "Nessuno Sconto";
         };
         // Un po' di log per controllare i valori di tutte le variabili
         console.log("------------- CONSOLE LOG DELLE OPERAZIONI -------------");
@@ -66,6 +69,16 @@ generateButton.addEventListener("click",
         console.log("costoBiglietto: " + costoBiglietto);
         console.log("bigliettoScontato: " + bigliettoScontato);
         console.log("-------------");
+
+        // stampo i dati nell'HTML
+        document.getElementById("dettNome").innerHTML = "Nome passeggero: " + userNameValue;
+        document.getElementById("dettKm").innerHTML = "Chilometri: " + userKmValue;
+        document.getElementById("dettEta").innerHTML = "Età: " + etaValue;
+        
+        document.getElementById("dettCosto").innerHTML = "Costo del biglietto: " + bigliettoScontato;
+
+
+
     }
     );
     
