@@ -14,19 +14,28 @@
 
     <main>
         <div id="input-box">
-            <input type="text" name="Cognome e Nome" id="userName" placeholder="Cognome e Nome">
+            <div class="container">
+                <h3>Benvenuto su Train Ticket!</h3>
+                <p>Train Ticket ti permette di viaggiare per tutto il territorio e oltre ad un prezzo stracciato!</p>
+                <p>Compila il form per fare un preventivo del tuo viaggio, bastano solo poche informazioni!</p>
+                <label for="userName">Cognome e nome</label>
+                <input type="text" name="Inserisci qui cognome e Nome" id="userName" placeholder="Cognome e Nome" class="inputClass">
+                
+                <label for="userKm">Quanti Km devi percorrere?</label>
+                <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere" class="inputClass">
+                
+                <p>Seleziona Età:</p>
+                <select id="eta" class="inputClass">
+                    <option value="minorenne">0-17</option>
+                    <option value="maggiorenne">18-65</option>
+                    <option value="over">66+</option>
+                </select>
+                <br>
+                <button id="genera">Genera</button>
+                <button id="reset">Reset</button>
+
+            </div>
             
-            <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere">
-            
-            <p>Seleziona Età:</p>
-            <select id="eta">
-                <option value="minorenne">0-17</option>
-                <option value="maggiorenne">18-65</option>
-                <option value="over">66+</option>
-            </select>
-            <br>
-            <button id="genera">Genera</button>
-            <button id="reset">Reset</button>
         </div>
         
 
@@ -49,10 +58,10 @@
                  </div>
             </div>
             <div class="mainTicket">
-                <div class="ticketSection">1 </div>
-                <div class="ticketSection">2 </div>
-                <div class="ticketSection">3 </div>
-                <div class="ticketSection">4 </div>
+                <div class="ticketSectionTop">1 </div>
+                <div class="ticketSectionTop">2 </div>
+                <div class="ticketSectionBottom">3 </div>
+                <div class="ticketSectionBottom">4 </div>
             </div>
             <div class="bandaRossa bandaRossaDown">
                 <i class="fas fa-train"></i>
