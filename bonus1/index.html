@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>T.T.   Train Ticket</title>
+</head>
+<body>
+    <header>
+       <h1> T.T.     Your  Train Ticket</h1>
+    </header>
+
+    <main>
+        <div id="input-box">
+            <input type="text" name="Cognome e Nome" id="userName" placeholder="Cognome e Nome">
+            
+            <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere">
+            
+            <p>Seleziona Età:</p>
+            <select id="eta">
+                <option value="minorenne">0-17</option>
+                <option value="maggiorenne">18-65</option>
+                <option value="over">66+</option>
+            </select>
+            <br>
+            <button id="genera">Genera</button>
+            <button id="reset">Reset</button>
+        </div>
+        
+
+
+        <div id="trainTicket">
+            <div id="ticket-box">
+                <h2>Dettagli Biglietto:</h2>
+                <p id="dettNome"> </p>
+                <p id="dettKm"> </p>
+                <p id="dettEta"> </p>
+                <p id="dettSconto"> </p>
+                <p id="dettCosto"> </p>
+            </div>
+            <div class="bandaRossa bandaRossaUp">
+                <div id="logo">
+                    <span id="doubleT">
+                        <div id="firstT">T</div>
+                        <div id="secondT">T</div>
+                    </span>
+                 </div>
+            </div>
+            <div class="mainTicket">
+                <div class="ticketSection">1 </div>
+                <div class="ticketSection">2 </div>
+                <div class="ticketSection">3 </div>
+                <div class="ticketSection">4 </div>
+            </div>
+            <div class="bandaRossa bandaRossaDown">
+                <i class="fas fa-train"></i>
+                <i class="fas fa-ticket-alt"></i>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+
+    </footer>
+
+    <script src="assets/js/javascript.js"></script>
+</body>
+</html>

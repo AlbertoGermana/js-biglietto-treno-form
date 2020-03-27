@@ -1,0 +1,98 @@
+/* RESET RULES */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* BODY RULES */
+body{
+    background-color: MediumSeaGreen;    
+}
+
+/* MAIN DIV RULES */
+main{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+header{
+    width: 100vw;
+    height: 70px;
+    background-color: pink;
+}
+#input-box{
+    width: 30vw;
+    height: calc(100vh - 70px);
+    border: 1px solid black;
+    background-color: whitesmoke;
+}
+
+#trainTicket{
+    width: 70vw;
+    height: calc(100vh - 70px);
+    border: 1px solid black;
+    background-color: lightblue;
+    margin-left: calc(70vw - 50%);
+}
+
+
+/* LOGO RULES */
+#doubleT{
+    margin-top: 10px;
+    position: absolute;
+}
+#doubleT div{
+    color: white;
+    font-size: 25px;
+    position: absolute;
+}
+#firstT{
+    margin-left: 20px;
+}
+#secondT{
+    margin-left: 30px;
+    margin-top: 5px;
+}
+
+
+#trainTicket{
+    width: 500px;
+    height: 300px;
+}
+
+.bandaRossa{
+    height: 50px;
+    background-color: tomato;
+}
+.mainTicket{
+    background-color: lemonchiffon;
+    height: 200px;
+}
+.bandaRossaUp{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.bandaRossaDown{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticketSection{
+    border: 1px solid black;
+    width: 50%;
+    height: 50%;
+}
+.mainTicket{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+i.fas{
+    color: white;
+    font-size: 20px;
+    margin: 14px 40px;
+}
