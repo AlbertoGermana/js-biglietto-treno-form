@@ -1,4 +1,5 @@
-/* DESCRIZIONE:
+/* 
+-------------------- DESCRIZIONE ESERCIZIO: --------------------
 Creo una versione dell’EX del biglietto del treno ricca con un bell’output dinamico;
 Sulla base di quello visto insieme in aula, ma non per forza identico;
 L’importante è usare eventi sui 2 bottoni principali, e sviluppare le logiche che sottendono;
@@ -23,7 +24,14 @@ var userNameValue, userKmValue, etaValue;
 
 // dichiaro variabili dei pulsanti che si collegano agli elementi button dell'html
 var generateButton = document.getElementById("genera");
-var asd = document.getElementById("asd");
+var resetButton = document.getElementById("reset");
+
+// variabili che con gli sconti
+var scontoUnder = 0.2;
+var scontoOver = 0.4;
+
+/* Definizione del prezzo di 0.21€/km */
+var euroKm = 0.21;
 
 
 generateButton.addEventListener("click", 
@@ -32,8 +40,36 @@ generateButton.addEventListener("click",
         userKmValue = userKm.value;
         etaValue = eta.value;
 
-        console.log("Ho generato: "+ userNameValue + userKmValue + etaValue);
-        document.getElementById("stampa").innerHTML = userNameValue;
-    }
-);
+        // variabile che conterrà il costo del biglietto
+        var costoBiglietto = userKmValue * euroKm;
+        var bigliettoScontato;
 
+        // Calcolo del biglietto nel caso di minorenne, applicare 20% di sconto */
+        if (etaValue === "minorenne"){
+            bigliettoScontato = costoBiglietto - (costoBiglietto*scontoUnder);
+        }else if(etaValue === "over"){  // In caso di over 65 sconto del 40%
+            bigliettoScontato = costoBiglietto - (costoBiglietto*scontoOver);
+        }else{  // Eta compresa tra 18 e 65 anni
+            bigliettoScontato = costoBiglietto;
+        };
+        console.log("------------- CONSOLE LOG DELLE OPERAZIONI -------------");
+        console.log("scontoUnder: " + scontoUnder);
+        console.log("scontoOver: " + scontoOver);
+        console.log("euroKm: " + euroKm);
+        console.log("-------------");
+        console.log("userNameValue: "+ userNameValue);
+        console.log("userKmValue: "+ userKmValue);
+        console.log("etaValue: "+ etaValue);
+        console.log("-------------");
+        console.log("costoBiglietto: " + costoBiglietto);
+        console.log("bigliettoScontato: " + bigliettoScontato);
+        console.log("-------------");
+    }
+    );
+    
+resetButton.addEventListener("click", 
+    function(){
+    
+    }
+    
+    )
