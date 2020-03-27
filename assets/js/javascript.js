@@ -36,6 +36,7 @@ var euroKm = 0.21;
 
 generateButton.addEventListener("click", 
     function () {
+        // assegno i valori immessi nei campi nelle rispettive variabili
         userNameValue = userName.value;
         userKmValue = userKm.value;
         etaValue = eta.value;
@@ -52,6 +53,7 @@ generateButton.addEventListener("click",
         }else{  // Eta compresa tra 18 e 65 anni
             bigliettoScontato = costoBiglietto;
         };
+        // Un po' di log per controllare i valori di tutte le variabili
         console.log("------------- CONSOLE LOG DELLE OPERAZIONI -------------");
         console.log("scontoUnder: " + scontoUnder);
         console.log("scontoOver: " + scontoOver);
@@ -69,7 +71,9 @@ generateButton.addEventListener("click",
     
 resetButton.addEventListener("click", 
     function(){
-    
+        // resetto i valori dei campi
+        userName.value = "";
+        userKm.value = "";
     }
     
-    )
+    );
