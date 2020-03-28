@@ -7,14 +7,14 @@
 
 /* BODY RULES */
 body{
-    background-color: MediumSeaGreen;    
+    background-color: lightskyblue; 
+    color: dodgerblue;  
 }
 
 /* MAIN DIV RULES */
 main{
     display: flex;
     flex-wrap: nowrap;
-    align-items: center;
 }
 header{
     width: 100vw;
@@ -23,41 +23,61 @@ header{
 #input-box{
     width: 30vw;
     height: calc(100vh - 70px);
-    border: 1px solid black;
-
 }
 
 #trainTicket{
     width: 500px;
     height: 300px;
-    background-color: lightblue;
     margin-left: calc(70vw/2);
     transform: translate(-50%, 0);
+    margin-top: 20px;
 }
 .container{
-    border: 1px solid red;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* ALL STYLE RULES */
 h1{
-    text-align: center;
     padding-top: 10px;
-    color: whitesmoke;
+
 }
-h2{
+h1, h2, h3{
     text-align: center;
 }
 p{
-    margin-top: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: justify;
 }
     /* INPUT STYLES */
 
-input.inputClass{
-    background-color: red;
+.inputClass, #eta{
+    background-color: whitesmoke;
     width: 100%;
+    height: 40px;
+    border-radius: 10px;
+    text-indent: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+    border: dodgerblue 1px solid;
+    color: dodgerblue;
 }
-
+.buttonClass{
+    height: 40px;
+    width: 25%;
+    border-radius: 10px;
+    font-size: large;
+}
+label{
+    margin-top: 20px;
+    font-weight: bold;
+}
+input::placeholder, select, .buttonClass{
+    color: skyblue;
+}
 /* LOGO RULES */
 #doubleT{
     margin-top: 10px;
@@ -101,11 +121,25 @@ input.inputClass{
 /* END TICKET STYLE RULES */
 
 /* TICKET SECTION RULES */
+.mainTicket{
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.min{
+    font-size: small;
+    font-weight: normal;
+}
+img{
+    width: 45px;
+}
 .ticketSectionTop,
 .ticketSectionBottom{
-    border: 1px solid black;
     width: 50%;
     height: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 i.fas{
     color: white;
@@ -113,3 +147,16 @@ i.fas{
     margin: 14px 40px;
 }
 /* END TICKET SECTION RULES */
+
+.displayNone{
+    display: none;
+    opacity: 0;
+    transition: 2s ease;
+}
+.displayYes{
+    display: block;
+    opacity: 1;
+    transition: 2s ease;
+}
+
+/* sistemare effetti */

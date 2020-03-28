@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <title>T.T.   Train Ticket</title>
 </head>
@@ -16,23 +17,25 @@
         <div id="input-box">
             <div class="container">
                 <h3>Benvenuto su Train Ticket!</h3>
-                <p>Train Ticket ti permette di viaggiare per tutto il territorio e oltre ad un prezzo stracciato!</p>
-                <p>Compila il form per fare un preventivo del tuo viaggio, bastano solo poche informazioni!</p>
-                <label for="userName">Cognome e nome</label>
-                <input type="text" name="Inserisci qui cognome e Nome" id="userName" placeholder="Cognome e Nome" class="inputClass">
-                
-                <label for="userKm">Quanti Km devi percorrere?</label>
-                <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere" class="inputClass">
-                
-                <p>Seleziona Età:</p>
-                <select id="eta" class="inputClass">
-                    <option value="minorenne">0-17</option>
-                    <option value="maggiorenne">18-65</option>
-                    <option value="over">66+</option>
-                </select>
-                <br>
-                <button id="genera">Genera</button>
-                <button id="reset">Reset</button>
+                <p>Train Ticket ti permette di viaggiare per tutto il territorio e oltre ad un prezzo stracciato! Compila il form per fare un preventivo del tuo viaggio, bastano solo poche informazioni!</p>
+                <div id="form">
+                    <label for="userName">Cognome e nome</label>
+                    <input type="text" name="Inserisci qui cognome e Nome" id="userName" placeholder="Cognome e Nome" class="inputClass">
+                    
+                    <label for="userKm">Quanti Km devi percorrere?</label>
+                    <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere" class="inputClass">
+                    
+                    <label for="eta">Seleziona Età:</label>
+                    <select id="eta">
+                        <option value="minorenne" class="inputClass">0-17</option>
+                        <option value="maggiorenne" class="inputClass">18-65</option>
+                        <option value="over" class="inputClass">66+</option>
+                    </select>
+                    <br>
+                    <button id="genera" class="buttonClass">Genera</button>
+                    <button id="reset" class="buttonClass">Reset</button>
+                </div>
+
 
             </div>
             
@@ -40,15 +43,7 @@
         
 
 
-        <div id="trainTicket">
-            <div id="ticket-box">
-                <h2>Dettagli Biglietto:</h2>
-                <p id="dettNome"> </p>
-                <p id="dettKm"> </p>
-                <p id="dettEta"> </p>
-                <p id="dettSconto"> </p>
-                <p id="dettCosto"> </p>
-            </div>
+        <div id="trainTicket" class="displayNone">
             <div class="bandaRossa bandaRossaUp">
                 <div id="logo">
                     <span id="doubleT">
@@ -58,10 +53,31 @@
                  </div>
             </div>
             <div class="mainTicket">
-                <div class="ticketSectionTop">1 </div>
-                <div class="ticketSectionTop">2 </div>
-                <div class="ticketSectionBottom">3 </div>
-                <div class="ticketSectionBottom">4 </div>
+                <div class="ticketSectionTop">
+                    <span class='min'>CLASS: </span>2ND
+                    <br>
+                    <p id="dettKm"> </p>
+                    <img src="assets/img/qr.png" alt="">
+                </div>
+
+                <div class="ticketSectionTop">
+                    <p id="dettNome"> </p>
+                    <p id="dettEta"> </p>
+                </div>
+
+                <div class="ticketSectionBottom"><span class="min">FROM:</span>
+                    <br>
+                    PALERMO 
+                    <br>
+                    <span class="min">TO:</span>
+                    <br>
+                    CATANIA
+                </div>
+
+                <div class="ticketSectionBottom">
+                    <p id="dettCosto"> </p>
+                    <p id="dettSconto"> </p>
+                </div>
             </div>
             <div class="bandaRossa bandaRossaDown">
                 <i class="fas fa-train"></i>

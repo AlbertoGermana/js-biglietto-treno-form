@@ -71,13 +71,13 @@ generateButton.addEventListener("click",
         console.log("-------------");
 
         // stampo i dati nell'HTML
-        document.getElementById("dettNome").innerHTML = "Nome passeggero: " + userNameValue;
-        document.getElementById("dettKm").innerHTML = "Chilometri: " + userKmValue;
-        document.getElementById("dettEta").innerHTML = "Età: " + etaValue;
+        document.getElementById("dettNome").innerHTML = "<span class='min'>Nome passeggero: </span><br>" + userNameValue;
+        document.getElementById("dettKm").innerHTML = "<span class='min'>Distanza: </span>" + userKmValue + "Km";
+        document.getElementById("dettEta").innerHTML = "<span class='min'>Età: </span>" + etaValue;
         
-        document.getElementById("dettCosto").innerHTML = "Costo del biglietto: " + bigliettoScontato;
+        document.getElementById("dettCosto").innerHTML = "<span class='min'>Costo del biglietto: </span><br>" + bigliettoScontato + "€";
 
-
+        document.getElementById("trainTicket").className = "displayYes";
 
     }
     );
@@ -87,6 +87,7 @@ resetButton.addEventListener("click",
         // resetto i valori dei campi
         userName.value = "";
         userKm.value = "";
+        document.getElementById("trainTicket").className = "displayNone";
     }
     
     );
