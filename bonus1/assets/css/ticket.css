@@ -1,0 +1,63 @@
+#trainTicket{
+    width: 500px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 100px;
+    transition: ease 1s;
+}
+.bandaRossa{
+    height: 50px;
+    background-color: tomato;
+}
+.mainTicket{
+    background-color: lemonchiffon;
+    height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    border-left: solid 1px tomato;
+    border-right: solid 1px tomato;
+}
+.bandaRossaUp{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border: solid 1px tomato;
+}
+.bandaRossaDown{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: solid 1px tomato;
+    display: flex;
+    justify-content: space-between;
+}
+.mainTicket{
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.min{
+    font-size: small;
+    font-weight: normal;
+}
+img{
+    width: 45px;
+}
+.ticketSectionTop,
+.ticketSectionBottom{
+    width: 50%;
+    height: 50%;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+i.fas{
+    color: white;
+    font-size: 20px;
+    margin: 14px 40px;
+}
+.displayNone{
+    filter: blur(5px);
+}
+.displayYes{
+    filter: blur(0);
+    transition: ease 1s;
+}

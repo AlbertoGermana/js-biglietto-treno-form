@@ -47,13 +47,13 @@ generateButton.addEventListener("click",
 
         // Calcolo del biglietto nel caso di minorenne, applicare 20% di sconto */
         if (etaValue === "minorenne"){
-            bigliettoScontato = costoBiglietto - (costoBiglietto*scontoUnder);
+            bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoUnder))*100)/100;
             document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoUnder*100) + "%";
         }else if(etaValue === "over"){  // In caso di over 65 sconto del 40%
-            bigliettoScontato = costoBiglietto - (costoBiglietto*scontoOver);
+            bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoOver))*100)/100;
             document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoOver*100) + "%";
         }else{  // Eta compresa tra 18 e 65 anni
-            bigliettoScontato = costoBiglietto;
+            bigliettoScontato = Math.ceil(costoBiglietto*100)/100;
             document.getElementById("dettSconto").innerHTML = "Nessuno Sconto";
         };
         // Un po' di log per controllare i valori di tutte le variabili
@@ -87,6 +87,15 @@ resetButton.addEventListener("click",
         // resetto i valori dei campi
         userName.value = "";
         userKm.value = "";
+
+        //resetto html
+        document.getElementById("dettNome").innerHTML = "<span class='min'>Nome passeggero: </span><br>";
+        document.getElementById("dettKm").innerHTML = "<span class='min'>Distanza: </span>";
+        document.getElementById("dettEta").innerHTML = "<span class='min'>Età: </span>";
+        
+        document.getElementById("dettCosto").innerHTML = "<span class='min'>Costo del biglietto: </span><br>";
+        document.getElementById("dettSconto").innerHTML = "";
+
         document.getElementById("trainTicket").className = "displayNone";
     }
     

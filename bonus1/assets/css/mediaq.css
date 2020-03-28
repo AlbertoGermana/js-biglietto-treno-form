@@ -1,0 +1,32 @@
+@media all and (min-width: 0) and (max-width:360px){
+    main{
+        flex-wrap: wrap;
+    }
+        
+    #trainTicket{
+        width: 100vw;
+        margin-left: 0;
+    }
+    .mainTicket p{
+        font-size: 0.7em;
+    }       
+}
+@media all and (min-width: 361px) and (max-width:1079px){
+    main{
+        flex-wrap: wrap;
+    }
+        
+    #trainTicket{
+        width: 100vw;
+        margin-left: 0;
+    }
+    .mainTicket p{
+        font-size: 1em;
+    }       
+}
+@media all and (min-width: 1080px){
+    #input-box{
+        height: calc(100vh - 70px);
+    }
+    
+}

@@ -7,30 +7,22 @@
 
 /* BODY RULES */
 body{
-    background-color: lightskyblue; 
-    color: dodgerblue;  
+    background-color: lemonchiffon; 
+    color: tomato;  
 }
 
 /* MAIN DIV RULES */
 main{
     display: flex;
-    flex-wrap: nowrap;
+    justify-content: center;
 }
 header{
     width: 100vw;
     height: 70px;
 }
 #input-box{
-    width: 30vw;
-    height: calc(100vh - 70px);
-}
-
-#trainTicket{
-    width: 500px;
-    height: 300px;
-    margin-left: calc(70vw/2);
-    transform: translate(-50%, 0);
-    margin-top: 20px;
+    width: 460px;
+    /* height: calc(100vh - 70px); */
 }
 .container{
     margin: 20px;
@@ -62,8 +54,8 @@ p{
     text-indent: 10px;
     font-size: large;
     margin-bottom: 10px;
-    border: dodgerblue 1px solid;
-    color: dodgerblue;
+    border: tomato 1px solid;
+    color: tomato;
 }
 .buttonClass{
     height: 40px;
@@ -76,7 +68,7 @@ label{
     font-weight: bold;
 }
 input::placeholder, select, .buttonClass{
-    color: skyblue;
+    color: coral;
 }
 /* LOGO RULES */
 #doubleT{
@@ -97,66 +89,6 @@ input::placeholder, select, .buttonClass{
 }
 /* END LOGO RULES */
 
-/* TICKET STYLE RULES */
-.bandaRossa{
-    height: 50px;
-    background-color: tomato;
+#dettKm{
+    margin-bottom: 2px;
 }
-.mainTicket{
-    background-color: lemonchiffon;
-    height: 200px;
-    display: flex;
-    flex-wrap: wrap;
-}
-.bandaRossaUp{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-}
-.bandaRossaDown{
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-/* END TICKET STYLE RULES */
-
-/* TICKET SECTION RULES */
-.mainTicket{
-    font-family: 'Roboto Mono', monospace;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-.min{
-    font-size: small;
-    font-weight: normal;
-}
-img{
-    width: 45px;
-}
-.ticketSectionTop,
-.ticketSectionBottom{
-    width: 50%;
-    height: 50%;
-    padding-left: 5px;
-    padding-right: 5px;
-}
-i.fas{
-    color: white;
-    font-size: 20px;
-    margin: 14px 40px;
-}
-/* END TICKET SECTION RULES */
-
-.displayNone{
-    display: none;
-    opacity: 0;
-    transition: 2s ease;
-}
-.displayYes{
-    display: block;
-    opacity: 1;
-    transition: 2s ease;
-}
-
-/* sistemare effetti */
