@@ -8,6 +8,9 @@
 .bandaRossa{
     height: 50px;
     background-color: tomato;
+    color: white;
+    display: flex;
+    justify-content: space-between;
 }
 .mainTicket{
     background-color: lemonchiffon;
@@ -22,12 +25,16 @@
     border-top-right-radius: 20px;
     border: solid 1px tomato;
 }
+#code{
+    margin-right: 25px;
+}
 .bandaRossaDown{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     border: solid 1px tomato;
     display: flex;
     justify-content: space-between;
+    
 }
 .mainTicket{
     font-family: 'Roboto Mono', monospace;
@@ -39,7 +46,11 @@
     font-size: small;
     font-weight: normal;
 }
-img{
+.qr-code-none{
+    display: none;
+}
+.qr-code-displayed{
+    display: block;
     width: 45px;
 }
 .ticketSectionTop,
@@ -49,7 +60,7 @@ img{
     padding-left: 5px;
     padding-right: 5px;
 }
-i.fas{
+i.fas, a>i.far{
     color: white;
     font-size: 20px;
     margin: 14px 40px;

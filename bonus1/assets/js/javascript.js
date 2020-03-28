@@ -36,48 +36,48 @@ var euroKm = 0.21;
 
 generateButton.addEventListener("click", 
     function () {
-        // assegno i valori immessi nei campi nelle rispettive variabili
-        userNameValue = userName.value;
-        userKmValue = userKm.value;
-        etaValue = eta.value;
+        // controllo se i campi sono vuoti
+        if((userName.value=="") || 
+            (userKm.value=="")){
+                alert("Hai dimenticato di compilare i campi");
+        }else{
+            // assegno i valori immessi nei campi nelle rispettive variabili
+            userNameValue = userName.value;
+            userKmValue = userKm.value;
+            etaValue = eta.value;
+    
+            // variabile che conterrà il costo del biglietto
+            var costoBiglietto = userKmValue * euroKm;
+            var bigliettoScontato;
+    
+            // Calcolo del biglietto nel caso di minorenne, applicare 20% di sconto */
+            if (etaValue === "minorenne"){
+                bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoUnder))*100)/100;
+                document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoUnder*100) + "%";
+            }else if(etaValue === "over"){  // In caso di over 65 sconto del 40%
+                bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoOver))*100)/100;
+                document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoOver*100) + "%";
+            }else{  // Eta compresa tra 18 e 65 anni
+                bigliettoScontato = Math.ceil(costoBiglietto*100)/100;
+                document.getElementById("dettSconto").innerHTML = "Nessuno Sconto";
+            };
+            
+    
+            // stampo i dati nell'HTML
+            document.getElementById("dettNome").innerHTML = "<span class='min'>Nome passeggero: </span><br>" + userNameValue;
+            document.getElementById("dettKm").innerHTML = "<span class='min'>Distanza: </span>" + userKmValue + "Km";
+            document.getElementById("dettEta").innerHTML = "<span class='min'>Età: </span>" + etaValue;
+            
+            document.getElementById("dettCosto").innerHTML = "<span class='min'>Costo del biglietto: </span><br>" + bigliettoScontato + "€";
+    
+            document.getElementById("trainTicket").className = "displayYes";
+            document.getElementById("qr-code").className = "qr-code-displayed";
 
-        // variabile che conterrà il costo del biglietto
-        var costoBiglietto = userKmValue * euroKm;
-        var bigliettoScontato;
-
-        // Calcolo del biglietto nel caso di minorenne, applicare 20% di sconto */
-        if (etaValue === "minorenne"){
-            bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoUnder))*100)/100;
-            document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoUnder*100) + "%";
-        }else if(etaValue === "over"){  // In caso di over 65 sconto del 40%
-            bigliettoScontato = Math.ceil((costoBiglietto - (costoBiglietto*scontoOver))*100)/100;
-            document.getElementById("dettSconto").innerHTML = "Sconto applicato: " + (scontoOver*100) + "%";
-        }else{  // Eta compresa tra 18 e 65 anni
-            bigliettoScontato = Math.ceil(costoBiglietto*100)/100;
-            document.getElementById("dettSconto").innerHTML = "Nessuno Sconto";
-        };
-        // Un po' di log per controllare i valori di tutte le variabili
-        console.log("------------- CONSOLE LOG DELLE OPERAZIONI -------------");
-        console.log("scontoUnder: " + scontoUnder);
-        console.log("scontoOver: " + scontoOver);
-        console.log("euroKm: " + euroKm);
-        console.log("-------------");
-        console.log("userNameValue: "+ userNameValue);
-        console.log("userKmValue: "+ userKmValue);
-        console.log("etaValue: "+ etaValue);
-        console.log("-------------");
-        console.log("costoBiglietto: " + costoBiglietto);
-        console.log("bigliettoScontato: " + bigliettoScontato);
-        console.log("-------------");
-
-        // stampo i dati nell'HTML
-        document.getElementById("dettNome").innerHTML = "<span class='min'>Nome passeggero: </span><br>" + userNameValue;
-        document.getElementById("dettKm").innerHTML = "<span class='min'>Distanza: </span>" + userKmValue + "Km";
-        document.getElementById("dettEta").innerHTML = "<span class='min'>Età: </span>" + etaValue;
+            document.getElementById("code").innerHTML = createTicketCode();
+        }
         
-        document.getElementById("dettCosto").innerHTML = "<span class='min'>Costo del biglietto: </span><br>" + bigliettoScontato + "€";
-
-        document.getElementById("trainTicket").className = "displayYes";
+        
+        
 
     }
     );
@@ -97,6 +97,23 @@ resetButton.addEventListener("click",
         document.getElementById("dettSconto").innerHTML = "";
 
         document.getElementById("trainTicket").className = "displayNone";
+        document.getElementById("qr-code").className = "qr-code-none";
     }
     
     );
+
+    function createTicketCode(){
+        var codice;
+        var array = ["Q","W","E","R","T","Y","U","I","O","P","A","S","D","F","G","H","J","K","L","Z","X","C","V","B","N","M","1","2","3","4","5","6","7","8","9","0"];
+        var casuale = "ID:  "; 
+        
+        for(var i = 0; i < 12; i++){
+            casuale = Math.floor(Math.random() * array.length);
+            codice = codice + array[casuale];
+            console.log("array[casuale]" + array[casuale]);
+            
+            
+        }
+
+        return codice;
+    }

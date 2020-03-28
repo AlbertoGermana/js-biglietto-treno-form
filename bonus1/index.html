@@ -35,7 +35,7 @@
                     </select>
                     <br>
                     <button id="genera" class="buttonClass">Genera</button>
-                    <button id="reset" class="buttonClass">Reset</button>
+                    <button id="reset" class="buttonClass">Nuovo</button>
                 </div>
 
 
@@ -53,6 +53,9 @@
                         <div id="secondT">T</div>
                     </span>
                  </div>
+                 <div id="ticket-code">
+                     <p id="code"> ID: </p>
+                 </div>
             </div>
             <div class="mainTicket">
                 <div class="ticketSectionTop">
@@ -61,7 +64,7 @@
                     <p id="dettKm">
                         <span class='min'>Distanza: </span>
                     </p>
-                    <img src="assets/img/qr.png" alt="">
+                    <img id="qr-code" class="qr-code-none" src="assets/img/qr.png" alt="">
                 </div>
 
                 <div class="ticketSectionTop">
@@ -92,6 +95,9 @@
             </div>
             <div class="bandaRossa bandaRossaDown">
                 <i class="fas fa-train"></i>
+                <a href="">
+                    <i class="far fa-credit-card">  Acquista</i>
+                </a>
                 <i class="fas fa-ticket-alt"></i>
             </div>
         </div>

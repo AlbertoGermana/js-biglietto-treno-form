@@ -22,7 +22,6 @@ header{
 }
 #input-box{
     width: 460px;
-    /* height: calc(100vh - 70px); */
 }
 .container{
     margin: 20px;
@@ -62,12 +61,26 @@ p{
     width: 25%;
     border-radius: 10px;
     font-size: large;
+    color: lemonchiffon;
+    background-color: tomato;
+    border-top: tomato 1px solid;
+    border-left: tomato 1px solid;
+    border-right: brown 1px solid;
+    border-bottom: brown 1px solid;
+}
+.buttonClass:active{
+    color: lemonchiffon;
+    background-color: tomato;
+    border-top: brown 2px solid;
+    border-left: brown 2px solid;
+    border-right: tomato 2px solid;
+    border-bottom: tomato 2px solid;
 }
 label{
     margin-top: 20px;
     font-weight: bold;
 }
-input::placeholder, select, .buttonClass{
+input::placeholder, select{
     color: coral;
 }
 /* LOGO RULES */
