@@ -37,9 +37,9 @@
         font-size: 1em;
     }       
 }
-@media all and (min-width: 1080px){
-    #input-box{
-        height: calc(100vh - 70px);
+/* @media all and (min-width: 0){
+    #trainTicket{
+        height: 450px;
     }
-    
-}
+           
+} */

@@ -1,6 +1,6 @@
 #trainTicket{
     width: 500px;
-    height: 300px;
+    height: 450px;
     margin-top: 20px;
     margin-left: 100px;
     transition: ease 1s;
@@ -14,11 +14,15 @@
 }
 .mainTicket{
     background-color: lemonchiffon;
-    height: 200px;
+    height: 220px;
     display: flex;
     flex-wrap: wrap;
     border-left: solid 1px tomato;
     border-right: solid 1px tomato;
+    font-family: 'Roboto Mono', monospace;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 .bandaRossaUp{
     border-top-left-radius: 20px;
@@ -35,12 +39,6 @@
     display: flex;
     justify-content: space-between;
     
-}
-.mainTicket{
-    font-family: 'Roboto Mono', monospace;
-    color: black;
-    text-transform: uppercase;
-    font-weight: bold;
 }
 .min{
     font-size: small;
@@ -71,4 +69,10 @@ i.fas, a>i.far{
 .displayYes{
     filter: blur(0);
     transition: ease 1s;
+}
+.displayNo{
+    display: none;
+}
+.displayBlock{
+    display: block;
 }

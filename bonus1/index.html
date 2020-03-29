@@ -12,101 +12,122 @@
 </head>
 <body>
     <header>
-       <h1>Train Ticket</h1>
+        <h1>Train Ticket</h1>
     </header>
-
-    <main>
-        <div id="input-box">
-            <div class="container">
-                <h3>Benvenuto su Train Ticket!</h3>
-                <p>Train Ticket ti permette di viaggiare per tutto il territorio e oltre ad un prezzo stracciato! Compila il form per fare un preventivo del tuo viaggio, bastano solo poche informazioni!</p>
-                <div id="form">
-                    <label for="userName">Cognome e nome</label>
-                    <input type="text" name="Inserisci qui cognome e Nome" id="userName" placeholder="Cognome e Nome" class="inputClass">
-                    
-                    <label for="userKm">Quanti Km devi percorrere?</label>
-                    <input type="number" name="Chilometri" id="userKm" placeholder="Km da percorrere" class="inputClass">
-                    
-                    <label for="eta">Seleziona Età:</label>
-                    <select id="eta">
-                        <option value="minorenne" class="inputClass">0-17</option>
-                        <option value="maggiorenne" class="inputClass">18-65</option>
-                        <option value="over" class="inputClass">66+</option>
-                    </select>
-                    <br>
-                    <button id="genera" class="buttonClass">Genera</button>
-                    <button id="reset" class="buttonClass">Nuovo</button>
+    <div class="container">
+        <main>
+            <!-- Form -->
+            <div id="input-box">
+                <div class="container">
+                    <!-- Parte descrittiva -->
+                    <h3>Benvenuto su Train Ticket!</h3>
+                    <p>Train Ticket ti permette di viaggiare per tutto il territorio e oltre ad un prezzo stracciato! Compila il form per fare un preventivo del tuo viaggio, bastano solo poche informazioni!</p>
+                    <!-- Elementi del form -->
+                    <div id="form">
+                        <!-- Cognome e nome utente -->
+                        <label for="userName">Cognome e nome</label>
+                        <input type="text" name="Inserisci qui cognome e Nome" id="userName" placeholder="Cognome e Nome" class="inputClass">
+                        <!-- Città di partenza -->
+                        <label for="from">Partenza: </label>
+                        <select id="from">
+                            <option value="palermo" class="inputClass">Palermo</option>
+                            <option value="roma" class="inputClass">Roma</option>
+                            <option value="milano" class="inputClass">Milano</option>
+                        </select>
+                        <!-- Città di arrivo -->
+                        <label for="to">Arrivo: </label>
+                        <select id="to">
+                            <option value="palermo" class="inputClass">Palermo</option>
+                            <option value="roma" class="inputClass">Roma</option>
+                            <option value="milano" class="inputClass">Milano</option>
+                        </select>
+                        <!-- Età utente per usufruire dello sconto -->
+                        <label for="eta">Seleziona Età:</label>
+                        <select id="eta">
+                            <option value="minorenne" class="inputClass">0-17</option>
+                            <option value="maggiorenne" class="inputClass">18-65</option>
+                            <option value="over" class="inputClass">66+</option>
+                        </select>
+                        <br>
+                        
+                        <!-- Tasti per generare o resettare biglietto -->
+                        <button id="genera" class="buttonClass">Genera</button>
+                        <button id="reset" class="buttonClass">Nuovo</button>
+                    </div>
                 </div>
-
-
             </div>
-            
-        </div>
+
+
+            <!-- Biglietto -->
+            <div id="trainTicket" class="displayNone">
+                <!-- Parte superiore biglietto-->
+                <div class="bandaRossa bandaRossaUp">
+                    <div id="logo">
+                        <span id="doubleT">
+                            <div id="firstT">T</div>
+                            <div id="secondT">T</div>
+                        </span>
+                    </div>
+                    <div id="ticket-code">
+                        <p id="code" class="displayNo"> ID: </p>
+                    </div>
+                </div>
+                <!-- Corpo del biglietto -->
+                <div class="mainTicket">
+                    <!-- Sezione 1 del biglietto, in alto a sinistra -->
+                    <div class="ticketSectionTop">
+                        <span class='min'>CLASS: </span>2ND
+                        <br>
+                        <p id="dettKm">
+                            <span class='min'>Distanza: </span>
+                        </p>
+                        <img id="qr-code" class="qr-code-none" src="assets/img/qr.png" alt="">
+                    </div>
+                    <!-- Sezione 2 del biglietto, in alto a destra -->
+                    <div class="ticketSectionTop">
+                        <p id="dettNome">
+                            <span class='min'>Nome passeggero: </span>
+                            <br> 
+                        </p>
+                        <p id="dettEta">
+                            <span class='min'>Età: </span>
+                        </p>
+                    </div>
+                    <!-- Sezione 3 del biglietto, in basso a sinistra -->
+                    <div class="ticketSectionBottom">
+                        <p id="dettFrom">
+                            <span class="min">FROM: </span>
+                            <br>
+                        </p>
+                        <p id="dettTo">
+                            <span class="min">TO: </span>
+                            <br>
+                        </p>
+                        <br>
+                    </div>
+                    <!-- Sezione 4 del biglietto, in basso a destra -->
+                    <div class="ticketSectionBottom">
+                        <p id="dettCosto">
+                            <span class='min'>Costo del biglietto: </span><br>
+                        </p>
+                        <p id="dettSconto"> </p>
+                    </div>
+                </div>
+                <!-- Parte inferiore biglietto -->
+                <div class="bandaRossa bandaRossaDown">
+                    <i class="fas fa-train"></i>
+                    <a href="#" id="buy" class="displayBlock">
+                        <i class="far fa-credit-card">  Acquista</i>
+                    </a>
+                    <i class="fas fa-ticket-alt"></i>
+                </div>
+            </div>
+        </main>
         
-
-
-        <div id="trainTicket" class="displayNone">
-            <div class="bandaRossa bandaRossaUp">
-                <div id="logo">
-                    <span id="doubleT">
-                        <div id="firstT">T</div>
-                        <div id="secondT">T</div>
-                    </span>
-                 </div>
-                 <div id="ticket-code">
-                     <p id="code"> ID: </p>
-                 </div>
-            </div>
-            <div class="mainTicket">
-                <div class="ticketSectionTop">
-                    <span class='min'>CLASS: </span>2ND
-                    <br>
-                    <p id="dettKm">
-                        <span class='min'>Distanza: </span>
-                    </p>
-                    <img id="qr-code" class="qr-code-none" src="assets/img/qr.png" alt="">
-                </div>
-
-                <div class="ticketSectionTop">
-                    <p id="dettNome">
-                        <span class='min'>Nome passeggero: </span>
-                        <br> 
-                    </p>
-                    <p id="dettEta">
-                        <span class='min'>Età: </span>
-                    </p>
-                </div>
-
-                <div class="ticketSectionBottom"><span class="min">FROM:</span>
-                    <br>
-                    PALERMO 
-                    <br>
-                    <span class="min">TO:</span>
-                    <br>
-                    CATANIA
-                </div>
-
-                <div class="ticketSectionBottom">
-                    <p id="dettCosto">
-                        <span class='min'>Costo del biglietto: </span><br>
-                    </p>
-                    <p id="dettSconto"> </p>
-                </div>
-            </div>
-            <div class="bandaRossa bandaRossaDown">
-                <i class="fas fa-train"></i>
-                <a href="">
-                    <i class="far fa-credit-card">  Acquista</i>
-                </a>
-                <i class="fas fa-ticket-alt"></i>
-            </div>
-        </div>
-    </main>
-    
-    <footer>
-
-    </footer>
-
+        <footer>
+            <p>Il costo del biglietto in questo momento (<span id="now">[now]</span>) è di <span id="cost">[cost]</span>€/km. Train Ticket è un servizio treni dal traffico molto limitato ed immaginario creato da Alberto Germanà per sviluppare un esercizio bonus.</p>
+        </footer>
+    </div>
     <script src="assets/js/javascript.js"></script>
 </body>
 </html>
